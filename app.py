@@ -45,7 +45,7 @@ def inpaint_image(original_image, mask_image):
 
 # 主畫面邏輯
 if bg_image:
-    image = Image.open(bg_image)
+    image = Image.open(bg_image).convert("RGB")
     
     # 建立兩欄佈局：左邊畫圖，右邊看結果
     col1, col2 = st.columns(2)
@@ -101,4 +101,5 @@ if bg_image:
         else:
             st.warning("請先在左側圖片上塗抹要去除的區域！")
 else:
+
     st.info("👈 請從左側側邊欄上傳圖片以開始使用。")
